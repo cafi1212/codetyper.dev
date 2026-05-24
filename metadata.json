@@ -1,0 +1,8 @@
+{
+  "name": "Remix: codetyper.dev",
+  "description": "A high-performance typing speed test and practice platform designed specifically for programmers. Build muscle memory for syntax, brackets, and keywords in multiple languages.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
