@@ -109,7 +109,7 @@ export default function App() {
   }, [selectedLanguage, selectedLength]);
 
   // Current snippet index in filtered list
-  const [snippetIndex, setSnippetIndex] = useState<number>(0);
+  const [snippetIndex, setSnippetIndex] = useState<number>(() => Math.floor(Math.random() * 1000));
   
   // Active snippet we are typing
   const currentSnippet: Snippet = useMemo(() => {
@@ -545,7 +545,10 @@ export default function App() {
                 <button
                   key={lang}
                   id={`lang-btn-${lang}`}
-                  onClick={() => setSelectedLanguage(lang)}
+                  onClick={() => {
+                    setSelectedLanguage(lang);
+                    setSnippetIndex(Math.floor(Math.random() * 1000));
+                  }}
                   className={`text-sm py-1.5 px-4 rounded-lg font-medium transition-all ${
                     isActive 
                       ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/10' 
@@ -567,7 +570,10 @@ export default function App() {
                 <button
                   key={len}
                   id={`len-btn-${len}`}
-                  onClick={() => setSelectedLength(len)}
+                  onClick={() => {
+                    setSelectedLength(len);
+                    setSnippetIndex(Math.floor(Math.random() * 1000));
+                  }}
                   className={`text-sm py-1.5 px-4 rounded-lg font-medium transition-all capitalize ${
                     isActive 
                       ? 'bg-[#10b981] text-white shadow-lg shadow-emerald-500/15'
